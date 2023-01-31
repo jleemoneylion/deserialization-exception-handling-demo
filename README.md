@@ -4,9 +4,9 @@ This is a demo of how to handle errors caused by poison pills in a Kafka topic w
 
 In this demo, we set up two different producers. One producer produces normal messages, and the other produces poison pills. The consumer consumes both normal messages and poison pills. 
 
-The consumer is configured to handle poison pills using a `ErrorHandlingDeserializer` so that the poison pills will affect the processing of the normal messages. 
+The consumer is configured to handle poison pills using a `ErrorHandlingDeserializer` so that the poison pills will not affect the processing of the normal messages. 
 
-In this demo, we also configure a recovery function which provides a default value to the handler when a poison pill is encountered. Without the recovery function, the consumer will simply log the error.
+In this demo, we configure a recovery function which provides a default value to the handler when a poison pill is encountered. The recovery function is optional. Without the recovery function, the consumer will simply log the error.
 
 ## Instructions
 
